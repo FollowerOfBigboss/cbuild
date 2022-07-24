@@ -116,8 +116,9 @@ void link_target(target* tg)
     if (tg->keepobjs==0){
      for(i=0;i<tg->flist->count; i++) {
         sprintf(obj, "%s.o", tg->flist->strarr[i].p);
-	// printf("remove %s\n", obj);
-        // printf("ret val %i\n", remove(obj));
+	int r = remove(obj);
+	//printf("remove %s\n", obj);
+       // printf("ret val %i\n", r);
      }
     }
 }
